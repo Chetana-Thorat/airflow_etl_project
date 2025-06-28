@@ -1,0 +1,27 @@
+[2025-06-28T18:32:52.519+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-28T18:32:52.552+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sales_etl.load_data manual__2025-06-28T18:32:44.978603+00:00 [queued]>
+[2025-06-28T18:32:52.560+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sales_etl.load_data manual__2025-06-28T18:32:44.978603+00:00 [queued]>
+[2025-06-28T18:32:52.561+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-28T18:32:52.579+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_data> on 2025-06-28 18:32:44.978603+00:00
+[2025-06-28T18:32:52.587+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1405) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-06-28T18:32:52.589+0000] {standard_task_runner.py:63} INFO - Started process 1407 to run task
+[2025-06-28T18:32:52.591+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'sales_etl', 'load_data', 'manual__2025-06-28T18:32:44.978603+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/sales_etl.py', '--cfg-path', '/tmp/tmpk_e6quqs']
+[2025-06-28T18:32:52.592+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask load_data
+[2025-06-28T18:32:52.644+0000] {task_command.py:426} INFO - Running <TaskInstance: sales_etl.load_data manual__2025-06-28T18:32:44.978603+00:00 [running]> on host 2c170f0bdbf7
+[2025-06-28T18:32:52.766+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sales_etl' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-06-28T18:32:44.978603+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-28T18:32:44.978603+00:00'
+[2025-06-28T18:32:52.769+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-28T18:32:52.781+0000] {logging_mixin.py:188} INFO - Inserting 4 records into sales_summary...
+[2025-06-28T18:32:52.799+0000] {base.py:84} INFO - Using connection ID 'postgres_conn' for task execution.
+[2025-06-28T18:32:52.811+0000] {logging_mixin.py:188} INFO - Inserting row: {'region': 'East', 'total_sales': 250}
+[2025-06-28T18:32:52.814+0000] {logging_mixin.py:188} INFO - Inserting row: {'region': 'North', 'total_sales': 180}
+[2025-06-28T18:32:52.814+0000] {logging_mixin.py:188} INFO - Inserting row: {'region': 'South', 'total_sales': 430}
+[2025-06-28T18:32:52.815+0000] {logging_mixin.py:188} INFO - Inserting row: {'region': 'West', 'total_sales': 320}
+[2025-06-28T18:32:52.816+0000] {logging_mixin.py:188} INFO - Data loaded successfully into sales_summary.
+[2025-06-28T18:32:52.817+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-06-28T18:32:52.818+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-28T18:32:52.831+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=sales_etl, task_id=load_data, run_id=manual__2025-06-28T18:32:44.978603+00:00, execution_date=20250628T183244, start_date=20250628T183252, end_date=20250628T183252
+[2025-06-28T18:32:52.857+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-06-28T18:32:52.876+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-28T18:32:52.878+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
